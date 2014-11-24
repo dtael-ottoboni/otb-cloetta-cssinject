@@ -1,0 +1,365 @@
+
+$cloetta-red:           #b50c07;
+$cloetta-red-light:     #cc9998;
+$bg-white:              #ffffff;
+$bg-light:              #fdfdfd;
+$black:                 #000000;
+$text-dark:             #666666;
+$text-dark-hover:       #000000;
+$button-border-light:   #dfdfdf;
+$font-default:          Arial,Verdana,sans-serif;
+
+@media screen {
+    body {
+        font-family: $font-default;
+        background-color: $cloetta-red;
+
+        .jspDrag {
+            background: #8d8d8d;
+        }
+
+        #header, 
+        #toolbar {
+            background: none;
+            background-color: $bg-white;
+            @include linear-gradient(#ffffff, #f0f0f0);
+        }
+
+        #toolbar {
+            border-bottom: 1px solid $cloetta-red-light;
+        }
+
+        #header {
+            &:before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 144px;
+                height: 54px;
+                background: url(../images/cloetta-logo.png) no-repeat;
+            }
+            
+            > img {
+                display: none;
+            }
+            #auth {
+                a.admin {
+                    color: $text-dark;
+                    text-shadow: none;
+                    background: url(../images/icons.png) no-repeat 0 -65px;
+                    background: none;
+                    padding-left: 8px; 
+                }
+                a.signout {
+                    text-shadow: none;
+                    background: none;
+                    color: #666;
+                    box-shadow: 0 1px 0 #BEBEBE;
+                    -moz-box-shadow: 0 1px 0 #BEBEBE;
+                    -webkit-box-shadow: 0 1px 0 #BEBEBE;
+                    background-color: #FEFEFE;
+                    background-image: -webkit-linear-gradient(#FEFEFE, #D8D8D8);
+                    background-image: linear-gradient(#FEFEFE, #D8D8D8);
+
+
+                    span {
+                        box-shadow: 0 1px 0 #BEBEBE;
+                        -moz-box-shadow: 0 1px 0 #BEBEBE;
+                        -webkit-box-shadow: 0 1px 0 #BEBEBE;
+                        background: none;
+                        display: block;
+                        padding: .5em .8em .5em .8em;
+                    }
+                }
+            }
+
+            #search input.submit {
+                top: 11px;
+                left: 477px;
+            }
+            #search .query {
+                background-color: $bg-white;
+                box-shadow: 0 1px 0 #ddd,0 1px 1px #aaa inset;
+                -moz-box-shadow: 0 1px 0 #ddd,0 1px 1px #aaa inset;
+                -webkit-box-shadow: 0 1px 0 #ddd,0 1px 1px #aaa inset;
+                color: $text-dark;
+
+                &.edited {
+                    color: $text-dark;
+                }
+            }
+        }
+
+        #toolbar {
+            a.import span span {
+                background: url(../images/icons.png) no-repeat 6px -186px;
+                background: none;
+                padding-left: 8px;
+            }
+            ul#actions {
+                box-sizing: border-box;
+                background: none;
+
+                li.download a span span {
+                    background: url(../images/icons.png) no-repeat 6px -563px;
+                    background: none;
+                    padding-left: 8px;
+                }
+                li.insert a span span {
+                    background: url(../images/icons.png) no-repeat 6px -248px;
+                    background: none;
+                    padding-left: 8px;
+                }
+                li.organize a span span {
+                    background: url(../images/icons.png) no-repeat 6px -436px;
+                    background: none;
+                    padding-left: 8px;
+                }
+                li.move a span span {
+                    background: url(../images/icons.png) no-repeat 6px -1734px;
+                    background: none;
+                    padding-left: 8px;
+                }
+                li.delete a span span {
+                    background: url(../images/icons.png) no-repeat 6px -499px;
+                    background: none;
+                    padding-left: 8px;
+                }
+
+            }
+            > ul > li > a {
+                text-shadow: none;
+                background: none;
+                color: $text-dark;
+
+                box-shadow: 0 1px 0 #BEBEBE;
+                -moz-box-shadow: 0 1px 0 #BEBEBE;
+                -webkit-box-shadow: 0 1px 0 #BEBEBE;
+
+                > span > span {
+                    box-shadow: 0 1px 0 #BEBEBE;
+                    -moz-box-shadow: 0 1px 0 #BEBEBE;
+                    -webkit-box-shadow: 0 1px 0 #BEBEBE;
+                }
+
+                @include linear-gradient(#fefefe, #d8d8d8);
+                > span {
+                    background: none;
+                }
+            }
+            > ul > li:not(.inactive) > a:hover > span {
+                color: $text-dark-hover;
+            }
+
+        }
+
+        #library {
+            background: none;
+            background-color: $bg-white;
+
+            #nav ul li.selected {
+                color: #FFF;
+                background: $cloetta-red url(../images/gradients.png) repeat-x 0 -546px;
+                box-shadow: 0 1px 0 $cloetta-red-light inset,0 -1px 0 $cloetta-red inset;
+                text-shadow: 0 1px 0 $cloetta-red;
+            }
+
+            #nav {
+                background: none;
+                @include linear-gradient(#fefefe, #f0f0f0);
+                border-right: #dbdbdb;
+            }
+            #nav-tabs a {
+                background: #e5e5e5;
+                color: #333333;
+                text-shadow: none;
+                &.selected {
+                    background: $bg-light;
+                    color: #333333;
+                }
+            }
+            
+            #nav-tabs, 
+            #metadata-tabs {
+                background: none;
+                background-color: $cloetta-red;
+                ul {
+                    box-shadow: 0 -1px 0 #e0e0e0 inset;
+                    li a {
+                        box-shadow: 0 1px 0 #e0e0e0 inset,0 -1px 0 #e0e0e0 inset;
+                        &.selected {
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+
+            #nav-toolbar {
+                background: url(../images/gradients.png) repeat-x 0 -599px;
+                box-shadow: none;
+                .create {
+                    background: url(../images/icons.png) no-repeat 7px -693px;
+                }
+                .edit {
+                    background: url(../images/icons.png) no-repeat 7px -755px;
+                }
+            }
+
+            #main {
+                background: none;
+                background-color: $bg-white;
+                background: $bg-white url(../images/stream.png);
+                background: $bg-white url(../images/stream-t.png) repeat-x,url(../images/stream.png);
+                border-left: 1px solid #dbdbdb;
+                border-right: 1px solid #dbdbdb;
+
+                #scope {
+                    h1 {
+                        color: #000;
+                        text-shadow: 0 1px 0 #FFF;
+                    }
+                }
+                #stream {
+                    ul li span.preview {
+                        background: rgba(0, 0, 0, 0) url("../images/icons.png") no-repeat 0 0;
+                        background: none;
+                        padding-left: 8px;
+                    }
+                    ul li.selected div.thumbnail {
+                        border: 1px solid rgba(181, 12, 5, 0.5);
+                    }
+                    ul li div.thumbnail {
+                        @include linear-gradient(#ffffff, #f0f0f0);
+                    }
+                    .jspDrag {
+                        background: #8d8d8d;
+                    }
+                }
+            }
+
+            #display-options {
+                background: url(../images/gradients.png) repeat-x 0 -599px;
+                box-shadow: none;
+                color: $text-dark;
+                text-shadow: none;
+                #sort-order {
+                    color: $text-dark;
+                }
+                a#sort-order {
+                    background: url(../images/icons.png) no-repeat 100% -1027px;
+                }
+            }
+
+            #details {
+                background-color: $bg-white;
+                border-left: 1px solid #DBDBDB;
+                @include linear-gradient(#fefefe, #f0f0f0);
+
+                #metadata-tabs a {
+                    background: #e5e5e5;
+                    color: #333333;
+                    text-shadow: none;
+                    &.selected {
+                        background: #ffffff;
+                        color: #333333;
+                    }
+                }
+
+                #details-no-mediaitem-selected span {
+                    border: solid 1px #BEBEBE;
+                    background-color: #BEBEBE;
+                    box-shadow: 0 1px 0 #BEBEBE;
+                    color: #5E5E64;
+                    text-shadow: 0 1px 0 #BEBEBE;
+                }
+                #details-viewport  {
+                    text-shadow: none !important;
+                    caption {
+                        color: $text-dark;
+                    }
+                    th {
+                        color: $text-dark;
+                    }
+                    td {
+                        color: $text-dark;
+                    }
+                }
+            }
+        }
+        #lightbox {
+            height: 90px;
+            color: $text-dark;
+            background: url(../images/gradients.png) repeat-x 0 -1481px;
+            p {
+                font-family: $font-default;
+                font-size: 100%;
+                margin-top: 20px;
+                color: $black;
+                text-shadow: none;
+            }
+            #lightbox-actions {
+                height: 34px;
+                text-shadow: none;
+                @include linear-gradient(#ffffff, #f0f0f0);
+                a.clear {
+                    color: $text-dark;
+                    margin-top: 5px;
+                }
+                a.insert, 
+                a.download, 
+                a.organize, 
+                a.share, 
+                a.move {
+                    margin-top: 2px;
+                    color: $text-dark;
+                    text-shadow: none;
+                    background: url(../images/gradients.png) repeat-x 0 -1704px;
+                    box-shadow: 0 1px 0 #BEBEBE;
+                    span {
+                        box-shadow: none;
+                        background: url(../images/gradients.png) repeat-x 0 -1704px;
+                        span {
+                            box-shadow: none;
+                        }
+                    }
+                }
+                ul a.insert span span {
+                    background: url(../images/icons.png) no-repeat 6px -251px;
+                }
+                ul a.download span span {
+                    background: url(../images/icons.png) no-repeat 6px -566px;
+                }
+                ul a.organize span span {
+                    background: url(../images/icons.png) no-repeat 6px -439px;
+                }
+                ul a.move span span {
+                    background: url(../images/icons.png) no-repeat 6px -1737px;
+                }
+            }
+        }
+
+
+        /** Non Hierarchy Rules */
+        #categories {
+            
+            label {
+                color: $text-dark;
+                &:hover {
+                    color: $text-dark-hover;
+                }
+            }
+        }
+        #categories span {
+            background: url(../images/icons.png) 0 -816px;
+            background: none;
+            padding-left: 8px;
+            &.expanded {
+                background: url(../images/icons.png) -1px -865px;
+                background: none;
+                padding-left: 8px;
+            }
+        }
+    }
+}
+
+    
