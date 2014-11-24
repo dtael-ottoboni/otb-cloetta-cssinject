@@ -14,6 +14,31 @@ $font-default:          Arial,Verdana,sans-serif;
         font-family: $font-default;
         background-color: $cloetta-red;
 
+        &.page {
+            background: rgba(0, 0, 0, 0) url(../images/stream.png);
+            border-top: 3px solid $bg-white;
+            font-family: $font-default;
+
+            #header {
+                border-bottom: none;
+            }
+
+        }
+
+
+        a {
+            color: $cloetta-red-light;
+        }
+        a:active, a:focus, a:hover {
+            color: $cloetta-red;
+        }
+
+        .menu a:hover {
+            background: none;
+            @include linear-gradient($cloetta-red-light, $cloetta-red);
+        }
+
+
         .jspDrag {
             background: #8d8d8d;
         }
@@ -23,6 +48,7 @@ $font-default:          Arial,Verdana,sans-serif;
             background: none;
             background-color: $bg-white;
             @include linear-gradient(#ffffff, #f0f0f0);
+            
         }
 
         #toolbar {
@@ -153,6 +179,16 @@ $font-default:          Arial,Verdana,sans-serif;
 
         }
 
+        #vaults {
+            text-shadow: none;
+            color: $text-dark;
+            ul li a {
+                text-shadow: none;
+                color: $text-dark;
+                background: url(../images/icons.png) no-repeat 28px -632px;
+            }
+        }
+
         #library {
             background: none;
             background-color: $bg-white;
@@ -168,6 +204,11 @@ $font-default:          Arial,Verdana,sans-serif;
                 background: none;
                 @include linear-gradient(#fefefe, #f0f0f0);
                 border-right: #dbdbdb;
+
+                #mediatype-list li a {
+                    background: url(../images/icons.png) no-repeat 28px -1092px;
+                }
+
             }
             #nav-tabs a {
                 background: #e5e5e5;
@@ -218,6 +259,19 @@ $font-default:          Arial,Verdana,sans-serif;
                         color: #000;
                         text-shadow: 0 1px 0 #FFF;
                     }
+                    li {
+                        &.category, 
+                        &.search {
+                            background: url(../images/gradients.png) no-repeat 100% -710px;
+                            span {
+                                background: url(../images/gradients.png) no-repeat 0 -659px;
+                            }
+                            
+                        }
+                    }
+                    a.remove-all {
+                        color: $cloetta-red;
+                    }
                 }
                 #stream {
                     ul li span.preview {
@@ -242,6 +296,10 @@ $font-default:          Arial,Verdana,sans-serif;
                 box-shadow: none;
                 color: $text-dark;
                 text-shadow: none;
+                #sort-menu.menu {
+                    padding: 0;
+                    padding-top: 7px;
+                }
                 #sort-order {
                     color: $text-dark;
                 }
@@ -360,6 +418,36 @@ $font-default:          Arial,Verdana,sans-serif;
             }
         }
     }
+
+    /*** Dialog */
+    body.page {
+        div.dialog th,
+        #meta-def-admin th,
+        #media-format-admin th {
+            border-bottom: solid 3px $cloetta-red-light;
+        }
+        #categories-admin ul {
+            border-top: solid 4px $cloetta-red-light;
+        }
+    }
+    
+
+    /*** VIEW - Organize */
+    a.organize, 
+    body.organize form input[type=submit] {
+        background: $cloetta-red url(../images/sprite.png) no-repeat 0 -2924px;
+        border: solid 1px $cloetta-red;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+        text-shadow: -1px -1px 1px $cloetta-red;
+        font-family: $font-default;
+    }
+
+    /*** VIEW - Import */
+    #import-src-dest {
+        background: rgba(0, 0, 0, 0) url(../images/sprite.png) no-repeat 437px -2486px;
+    }
+
 }
 
     
